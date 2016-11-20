@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+
+	<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		<!-- <property name="customEditors">
+			<map>
+				<entry key="java.util.Date">
+					<bean class="org.springframework.beans.propertyeditors.CustomDateEditor">
+						<constructor-arg>
+							<bean class="java.text.SimpleDateFormat">
+								<constructor-arg>
+									<value>yyyy-MM-dd</value>
+								</constructor-arg>
+							</bean>
+						</constructor-arg>
+						<constructor-arg>
+							<value>true</value>
+						</constructor-arg>
+					</bean>
+				</entry>
+				<entry key="java.lang.String">
+					<bean class="org.springframework.beans.propertyeditors.StringTrimmerEditor">
+						<constructor-arg value="true"></constructor-arg>
+					</bean>
+				</entry>
+			</map>
+		</property> -->
+		<property name="propertyEditorRegistrars">
+			<list>
+				<bean class="com.rajni.prospring.conf.pe.CustomEditorRegistrar"></bean>
+			</list>
+		</property>
+	</bean>
+	<bean id="nameBean" class="com.rajni.prospring.conf.pe.NameEditorTest">
+		<property name="name">
+			<value>Rajni Ubhi</value>
+		</property>
+	</bean>
+	<bean id="builtinSample" class="com.rajni.prospring.conf.pe.PropertyEditorBean">
+		<property name="bytes">
+			<value>Hello Rajni!!</value>
+		</property>
+		<property name="cls">
+			<value>java.lang.String</value>
+		</property>
+		<property name="date">
+			<value>1993-09-24</value>
+		</property>
+		<property name="file">
+			<value>C:\\Users\\acbd\\Documents\\Files\\logging.log</value>
+		</property>
+		<property name="floatValue">
+			<value>12.56f</value>
+		</property>
+		<property name="inputStream">
+			<value>file:C:\\Users\\acbd\\Documents\\Files\\logging.log</value>
+		</property>
+		<property name="locale">
+			<value>en_US</value>
+		</property>
+		<property name="pattern">
+			<value>a*b</value>
+		</property>
+		<property name="properties">
+			<value>
+				name=Rajni
+				age=23
+			</value>
+		</property>
+		<property name="stringList">
+			<util:list>
+				<value>Rajni</value>
+				<value>Ubhi</value>
+			</util:list>
+		</property>
+		<property name="trimString">
+			<value>         Hey My name Is Rajni               </value>
+		</property>
+		<property name="trueOrFalse">
+			<value>true</value>
+		</property>
+		<property name="url">
+			<value>http://www.springframework.org</value>
+		</property>
+	</bean>
+</beans>

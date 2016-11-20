@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<bean id="provider" class="com.rajni.prospring.basics.HelloWorldMessageProvider"></bean>
+
+	<bean id="providerCons"
+		class="com.rajni.prospring.basics.consinjection.ConfigurableMessageProvider"
+		c:message="This is configured by Constructor injection"></bean>
+
+	<bean id="rendererCons" class="com.rajni.prospring.basics.StandardOutMessageRenderer"
+		p:messageProvdider-ref="providerCons"></bean>
+	<bean id="renderer" class="com.rajni.prospring.basics.StandardOutMessageRenderer"
+		p:messageProvdider-ref="provider"></bean>
+
+	<bean id="constructorConfusion" class="com.rajni.prospring.basics.consinjection.ConstructorConfusion">
+		<constructor-arg type="int">
+			<value>90</value>
+		</constructor-arg>
+	</bean>
+</beans>

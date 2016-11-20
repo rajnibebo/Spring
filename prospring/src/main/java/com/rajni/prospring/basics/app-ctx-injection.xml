@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="injectSimple" class="com.rajni.prospring.basics.InjectSimple">
+		<property name="age">
+			<value>23</value>
+		</property>
+		<property name="ageInSeconds">
+			<value>1234568897</value>
+		</property>
+		<property name="name">
+			<value>Rajni</value>
+		</property>
+		<property name="height">
+			<value>1.25f</value>
+		</property>
+		<property name="programmer">
+			<value>true</value>
+		</property>
+	</bean>
+	<bean id="injectSimpleConfig" class="com.rajni.prospring.basics.InjectSimpleConfig" />
+	<bean id="injectSimpleSpel" class="com.rajni.prospring.basics.InjectSimpleSpel">
+		<property name="name">
+			<value>#{injectSimpleConfig.name}</value>
+		</property>
+		<property name="age">
+			<value>#{injectSimpleConfig.age}</value>
+		</property>
+		<property name="ageInSeconds">
+			<value>#{injectSimpleConfig.ageInSeconds}</value>
+		</property>
+		<property name="height">
+			<value>#{injectSimpleConfig.height}</value>
+		</property>
+		<property name="programmer">
+			<value>#{injectSimpleConfig.programmer}</value>
+		</property>
+	</bean>
+</beans>

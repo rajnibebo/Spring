@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.7.3.201602250914-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[false]]></enableImports>
+	<configs>
+		<config>src/main/java/com/rajni/prospring/basics/app-context-msg-render.xml</config>
+		<config>src/main/java/com/rajni/prospring/basics/app-ctx-injection.xml</config>
+		<config>src/main/java/com/rajni/prospring/conf/lifecycle/lifecycle.xml</config>
+		<config>src/main/java/com/rajni/prospring/conf/interaction/shutdown.xml</config>
+		<config>src/main/java/com/rajni/prospring/conf/pe/builtin.xml</config>
+		<config>src/main/java/com/rajni/prospring/conf/context/messageSource.xml</config>
+		<config>src/main/java/com/rajni/prospring/conf/event/events.xml</config>
+		<config>src/main/java/com/rajni/prospring/conf/profile/highschool/highschool-config.xml</config>
+		<config>src/main/java/com/rajni/prospring/conf/profile/kindergarten/kindergarten-config.xml</config>
+		<config>src/main/java/com/rajni/prospring/aop_advance/pfb/pfb.xml</config>
+	</configs>
+	<autoconfigs>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>

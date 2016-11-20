@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="factory" class="com.rajni.prospring.basics.factory.SingletonFactory"></bean>
+	<bean id="holder" class="com.rajni.prospring.basics.factory.SingletonHolder"
+		p:instance1-ref="factory" p:instance2-ref="factory"></bean>
+
+	<bean id="customFactory" class="com.rajni.prospring.basics.factory.MessageFactory"></bean>
+	<bean id="message" class="com.rajni.prospring.basics.factory.Message"
+		factory-bean="customFactory" factory-method="createInstance"></bean>
+</beans>

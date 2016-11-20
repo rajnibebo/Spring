@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	default-lazy-init="true" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<context:annotation-config />
+	<bean id="simpleBean1" class="com.rajni.prospring.conf.lifecycle.SimpleBean"
+		init-method="init" destroy-method="destroy">
+		<property name="age">
+			<value>23</value>
+		</property>
+		<property name="name">
+			<value>Clarence Ho</value>
+		</property>
+	</bean>
+	<bean id="simpleBean2" class="com.rajni.prospring.conf.lifecycle.SimpleBean"
+		init-method="init" destroy-method="destroy">
+		<property name="age">
+			<value>23</value>
+		</property>
+	</bean>
+	<bean id="simpleBean3" class="com.rajni.prospring.conf.lifecycle.SimpleBean"
+		init-method="init" destroy-method="destroy">
+		<property name="name">
+			<value>Lukewarm</value>
+		</property>
+	</bean>
+
+	<bean id="simpleBeanIntf1"
+		class="com.rajni.prospring.conf.lifecycle.SimpleBeanWithInterface">
+		<property name="age">
+			<value>23</value>
+		</property>
+		<property name="name">
+			<value>Clarence Ho</value>
+		</property>
+	</bean>
+	<bean id="simpleBeanIntf2"
+		class="com.rajni.prospring.conf.lifecycle.SimpleBeanWithInterface">
+		<property name="age">
+			<value>23</value>
+		</property>
+	</bean>
+	<bean id="simpleBeanIntf3"
+		class="com.rajni.prospring.conf.lifecycle.SimpleBeanWithInterface">
+		<property name="name">
+			<value>Lukewarm</value>
+		</property>
+	</bean>
+
+	<bean id="simpleBeanJSR1" class="com.rajni.prospring.conf.lifecycle.SimpleBeanWithJSR250">
+		<property name="age">
+			<value>23</value>
+		</property>
+		<property name="name">
+			<value>Clarence Ho</value>
+		</property>
+	</bean>
+	<bean id="simpleBeanJSR2" class="com.rajni.prospring.conf.lifecycle.SimpleBeanWithJSR250">
+		<property name="age">
+			<value>23</value>
+		</property>
+	</bean>
+	<bean id="simpleBeanJSR3" class="com.rajni.prospring.conf.lifecycle.SimpleBeanWithJSR250">
+		<property name="name">
+			<value>Lukewarm</value>
+		</property>
+	</bean>
+	
+	<bean id="simpleBeanWithAll" class="com.rajni.prospring.conf.lifecycle.SimpleBeanWithAll" init-method="customInit" 
+		destroy-method="customDestroy">
+	</bean>
+
+</beans>
